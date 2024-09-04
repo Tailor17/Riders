@@ -10,8 +10,6 @@ h2 {
     margin-bottom: 1.25em;
 }
 
-
-
 label {
     margin-bottom: 5px;
     font-weight: bold;
@@ -103,9 +101,9 @@ main {
 }
 
 .bloco img {
-    width: 12.5em; /* Largura das imagens */
+    width: 12.5em;
     height: auto;
-    margin-bottom: 5px; /* Espaço entre a imagem e o texto */
+    margin-bottom: 5px;
 }
 
 .bloco figcaption {
@@ -141,11 +139,11 @@ main {
 }
 
 .central-box p {
-    font-size: 1.2em; /* Tamanho da fonte */
-    color: #fff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    margin: 0; /* Remove margens internas do parágrafo */
-    font-family: 'Roboto', sans-serif; /* Tipografia moderna */
+    font-size: 1.2em; 
+    color: #fff; 
+    text-align: center; 
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; 
 }
 
 .carousel {
@@ -233,18 +231,18 @@ footer {
     width: 100%;
     bottom: 0;
     position: relative;
-    font-family: 'Roboto', sans-serif; /* Tipografia moderna */
+    font-family: 'Roboto', sans-serif; 
 }
 
 .contact-section {
-    text-align: center; /* Centraliza o conteúdo */
-    margin: 3.12em auto; /* Espaçamento acima e abaixo */
+    text-align: center; 
+    margin: 3.12em auto; 
 }
 
 .contact-section h2 {
-    font-size: 2em; /* Tamanho do título */
-    margin-bottom: 1.25em; /* Espaçamento abaixo do título */
-    color: #831717; /* Cor do título */
+    font-size: 2em; 
+    margin-bottom: 1.25em; 
+    color: #831717; 
 }
 
 .social-media {
@@ -264,10 +262,10 @@ footer {
 }
 
 .event-item {
-    text-align: center; /* Centraliza o texto e a imagem */
-    transition: transform 0.3s ease-in-out; /* Transição suave para o efeito de destaque */
-    display: inline-block; /* Mantém os itens em linha */
-    margin: 0.8em; /* Adiciona espaçamento ao redor dos itens */
+    text-align: center; 
+    transition: transform 0.3s ease-in-out; 
+    display: inline-block; 
+    margin: 0.8em; 
 }
 
 .event-item:hover {
@@ -276,10 +274,10 @@ footer {
 
 .eventimg img {
     width: 30%; /* Largura da imagem */
-    height: auto; /* Altura proporcional */
+    height: auto; 
     display: block;
-    margin: 0 auto; /* Centraliza a imagem */
-    cursor: pointer; /* Mostra o cursor de link */
+    margin: 0 auto; 
+    cursor: pointer; 
 }
 
 .eventimg h1 {
