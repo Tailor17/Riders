@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+    <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body>
+    <header>
+        <h1>Galeria de Imagens</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="filter-section">
+            <input type="date" id="filter-date" class="filter-input">
+            <button id="filter-btn" class="modern-btn">Filtrar</button>
+            <button id="show-all-btn" class="modern-btn">Mostrar Todas</button>
+        </section>
+        
+        <section id="gallery" class="gallery-container"></section>
+        
+        <div id="image-modal" class="image-modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+        </div>
+        
+        <p id="no-images-msg" class="centered-message">Nenhuma imagem encontrada</p>
+    </main>
+
+    <footer>
+        <p>Riders</p>
+    </footer>
+    
+    <script src="js/galeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Evento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="img/riders.png" alt="Logo">
+
+        <h1>Eventos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main id="evento-content">
+        
+    </main>
+    <footer>
+        <p>Riders</p>
+    </footer>
+
+       <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const evento = params.get('evento');
+    const eventoContent = document.getElementById('evento-content');
+
+    if (evento === 'trilha') {
+        eventoContent.innerHTML = `
+            <div class="eventimg">
+                <div class="event-item">
+                    <h1>5º Encontro de Trilheiros Tatus na Lama</h1>
+                    <a href="inscricao.html?eventoId=tatus">
+                        <img src="img/tatus1.jpg" alt="trilha do colono">
+                    </a>
+                </div>
+                <br><br>
+
+                <div class="event-item">
+                    <h1>8ª Trilha do Colono</h1>
+                    <a href="inscricao.html?eventoId=colono">
+                        <img src="img/trilha_colono.jpg" alt="trilha do colono">
+                    </a>
+                </div>
+            </div>       
+        `;
+    } else if (evento === 'pista') {
+        eventoContent.innerHTML = `
+            <div class="eventimg">
+                <div class="event-item">
+                    <h1>Corrida de 300cc em Cascavél/PR</h1>
+                    <a href="inscricao.html?eventoId=cora">
+                        <img src="img/autodromo.jpeg" alt="autodromo">
+                    </a>
+                </div>
+                <br><br>
+
+                <div class="event-item">
+                    <h1>competições 600cc+ em Guaporé/RS </h1>
+                    <a href="inscricao.html?eventoId=corb">
+                        <img src="img/guapore.webp" alt="Guapore">
+                    </a>
+                </div>
+            </div>         
+        `;
+    } else if (evento === 'corrida') {
+        eventoContent.innerHTML = `
+            <div class="eventimg">
+                <div class="event-item">
+                    <h1>Campeonato Gaucho de Enduro</h1>
+                    <a href="inscricao.html?eventoId=enduro">
+                        <img src="img/endur.png" alt="gaucho">
+                    </a>
+                </div>
+                <br><br>
+
+                <div class="event-item">
+                    <h1>8ª Etapa Do campeonato Zona Sul</h1>
+                    <a href="inscricao.html?eventoId=cross">
+                        <img src="img/cross1.jpg" alt="crosscountry">
+                    </a>
+                </div>
+            </div>       
+        `;
+    } else if (evento === 'passeio') {
+        eventoContent.innerHTML = `
+            <div class="eventimg">
+                <div class="event-item">
+                    <h1>Serra do Rio do Rastro</h1>
+                    <a href="inscricao.html?eventoId=serraa">
+                        <img src="img/serra3.webp" alt="Serra do rio do rastro">
+                    </a>
+                </div>
+                <br><br>
+
+                <div class="event-item">
+                    <h1>Serra do Corvo Branco</h1>
+                    <a href="inscricao.html?eventoId=serrab">
+                        <img src="img/serrab.jpeg" alt="serracorvobranco">
+                    </a>
+                </div>
+            </div>       
+        `;
+    } else {
+        eventoContent.innerHTML = `
+            <h2>Evento não encontrado</h2>
+            <p>Desculpe, não foi possível encontrar detalhes sobre o evento selecionado.</p>
+        `;
+    }
+});
+    </script>
+</body>
+</html>
+</body>
+</html>

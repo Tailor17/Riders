@@ -1,0 +1,457 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+
+
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    padding: 0.62em;
+    background-color: #831717;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #831717;
+}
+
+p {
+    text-align: center;
+}
+
+header {
+    background-color: #831717;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: relative; /* Adiciona um contexto de posicionamento para a imagem */
+}
+
+header img {
+    position: absolute; 
+    left: 1.25em; 
+    top: 60%; 
+    transform: translateY(-50%); 
+    width: 15em;
+    height: auto; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 0.62em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1.25em;
+    text-align: center;
+}
+
+
+.image-container {
+    display: flex; /* Exibe as imagens lado a lado */
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha se necessário */
+    justify-content: center; /* Centraliza as imagens */
+    gap: 1.25em; /* Espaçamento entre os blocos de imagens */
+}
+
+/* Estilo para os blocos de imagem */
+.bloco {
+    display: flex;
+    flex-direction: column; /* Organiza a imagem e o texto em coluna */
+    align-items: center; /* Centraliza a imagem e o texto */
+    margin: 0.62em;
+    transition: transform 0.3s ease; /* Transição suave no hover */
+}
+
+.bloco:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do bloco (imagem + legenda) em 20% */
+    cursor: pointer; /* Cursor de ponteiro no hover */
+}
+
+.bloco img {
+    width: 12.5em; /* Largura das imagens */
+    height: auto;
+    margin-bottom: 5px; /* Espaço entre a imagem e o texto */
+}
+
+.bloco figcaption {
+    font-size: 0.87em;
+    color: #333;
+    text-align: center;
+}
+
+.bloco a {
+    text-decoration: none; /* Remove a linha sublinhada do link */
+    color: inherit; /* Mantém a cor do texto da legenda */
+}
+
+.titulos{
+    font-size: 1.2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.central-box {
+    width: 60%; /* Largura do quadrado */
+    height: auto; /* Ajusta a altura automaticamente com base no conteúdo */
+    padding: 1.25em; /* Adiciona espaço interno ao redor do conteúdo */
+    border: 2px solid #2c1212; /* Borda ao redor do quadrado */
+    margin: 2.5em auto; /* Centraliza o quadrado horizontalmente e adiciona margem acima e abaixo */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo dentro do quadrado */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do quadrado */
+    background-color: #831717; /* Cor de fundo do quadrado */
+    border-radius: 10px; /* Arredonda os cantos do quadrado */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave para dar profundidade */
+}
+
+.central-box p {
+    font-size: 1.2em; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove margens internas do parágrafo */
+    font-family: 'Roboto', sans-serif; /* Tipografia moderna */
+}
+
+.carousel {
+    position: relative;
+    width: 100%; /* O carrossel ocupa toda a largura da tela */
+    height: 60vh; /* Ajuste a altura conforme necessário (60% da altura da tela) */
+    max-width: 100vw; /* Limita a largura máxima ao tamanho da tela */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0.62em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Garante que o carrossel use toda a altura disponível */
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Garante que cada item ocupe 100% da largura do carrossel */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Garante que o item ocupe toda a altura do carrossel */
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%; /* Ajusta a altura máxima da imagem para se ajustar ao carrossel */
+    object-fit: contain; /* Faz com que a imagem seja ajustada para caber no contêiner sem cortar */
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1em;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 0.62em; /* Ajuste a posição esquerda conforme necessário */
+}
+
+.carousel-control.next {
+    right: 0.62em; /* Ajuste a posição direita conforme necessário */
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-link {
+    display: inline-flex;
+    align-items: center; /* Alinha o texto e o ícone verticalmente */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: white; /* Cor do texto do link */
+}
+
+.gallery-link span {
+    font-size: 1.2em; /* Tamanho da fonte para o texto do link */
+    margin-right: 0.62em; /* Espaçamento entre o texto e o ícone */
+}
+
+.gallery-icon {
+    width: 2em; /* Ajuste o tamanho do ícone conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+footer {
+    margin-top: 5%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    font-family: 'Roboto', sans-serif; /* Tipografia moderna */
+}
+
+.contact-section {
+    text-align: center; /* Centraliza o conteúdo */
+    margin: 3.12em auto; /* Espaçamento acima e abaixo */
+}
+
+.contact-section h2 {
+    font-size: 2em; /* Tamanho do título */
+    margin-bottom: 1.25em; /* Espaçamento abaixo do título */
+    color: #831717; /* Cor do título */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    gap: 1.8em; /* Espaço entre os ícones */
+}
+
+.social-icon {
+    width: 3.12em; /* Define a largura dos ícones */
+    height: auto; /* Mantém a proporção dos ícones */
+    transition: transform 0.3s ease-in-out; /* Transição suave para o efeito de destaque */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Aumenta o tamanho dos ícones ao passar o mouse */
+}
+
+.event-item {
+    text-align: center; /* Centraliza o texto e a imagem */
+    transition: transform 0.3s ease-in-out; /* Transição suave para o efeito de destaque */
+    display: inline-block; /* Mantém os itens em linha */
+    margin: 0.8em; /* Adiciona espaçamento ao redor dos itens */
+}
+
+.event-item:hover {
+    transform: scale(1.2); /* Efeito de zoom no texto e na imagem */
+}
+
+.eventimg img {
+    width: 30%; /* Largura da imagem */
+    height: auto; /* Altura proporcional */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    cursor: pointer; /* Mostra o cursor de link */
+}
+
+.eventimg h1 {
+
+    margin: 1em 0;
+}
+
+form {
+    max-width: 37.5em; /* Largura máxima do formulário */
+    margin: 1.25em auto; /* Margem centralizada */
+    padding: 1.25em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+form label {
+    display: block;
+    margin: 0.62em 0 0.32em
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.62em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.eventimg {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens se ajustem em várias linhas se necessário */
+    gap: 0.62em; /* Espaçamento entre as imagens */
+    justify-content: center; /* Centraliza as imagens */
+}
+
+.map-container {
+    width: 100%; /* Define a largura do mapa */
+    height: 18.75em; /* Define a altura do mapa */
+    max-width: 37.5em; /* Define uma largura máxima para o mapa */
+    margin: 0 auto; /* Centraliza o mapa horizontalmente */
+    border-radius: 8px; /* Adiciona cantos arredondados */
+    overflow: hidden; /* Garante que o mapa não ultrapasse os limites */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 1.25px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Estilo do botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    width: 40%;
+    margin: 3.13em auto;
+    padding: 2em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-and-image {
+    display: flex;
+    align-items: center;
+    gap: 1.3em; /* Espaço entre o formulário e a imagem */
+}
+
+.login-form {
+    flex: 2; /* Ocupa o espaço disponível */
+}
+
+.login-image {
+    flex: 1.8; /* Ocupa o espaço disponível */
+}
+
+.login-image img {
+    max-width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 0.5em; /* Opcional: para arredondar as bordas da imagem */
+}
+.container-cadastro {
+    width: 18.75em;
+    margin: 3.13em auto;
+    padding: 1,25em;
+    background: url('../img/motogp.webp') no-repeat center center; /* Ajuste o caminho conforme necessário */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo da .container-cadastro */
+    border: 1px solid #ddd;
+    border-radius: 0.3px;
+}
+
+.container-cadastro h2,
+.container-cadastro label,
+.container-cadastro p {
+    color: #020101; /* Cor do texto */
+}
+
+.container-cadastro form {
+    background-color: rgba(255, 255, 255, 0.24); /* Fundo branco semitransparente para melhor legibilidade */
+    padding: 1.25em; /* Adiciona algum espaçamento interno */
+    border-radius: 5px; /* Arredonda os cantos do fundo do formulário */
+}
+
+.container-cadastro input,
+.container-cadastro button {
+    width: calc(100% - 1.25em); /* Ajusta a largura dos campos para caber no contêiner */
+    margin-bottom: 1.1em; /* Espaçamento entre os campos */
+    padding: 8px; /* Adiciona espaçamento interno */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #ffffffde; /* Fundo branco para os campos e botão */
+    color: #333; /* Cor do texto nos campos e botão */
+}
+
+.container-cadastro button {
+    background-color: #831717; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none;
+    cursor: pointer;
+}
+
+.container-cadastro button:hover {
+    background-color: #a12c2c; /* Cor de fundo do botão ao passar o mouse */
+}
+
+.container-cadastro p a {
+    color: #0a0202; 
+    text-decoration: underline; 
+}
+
+.container-cadastro p a:hover {
+    color: #a12c2c; 
+}
+
