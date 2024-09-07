@@ -1,20 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
 header {
     background-color: #831717;
     color: white;
     padding: 1em;
-    text-align: center;
-    position: relative; 
+    display: flex; /* Flexbox para organizar os elementos */
+    align-items: center; /* Centraliza verticalmente a imagem e o texto */
+    justify-content: space-between; /* Mantém a imagem à esquerda e o texto no centro */
+    font-family: 'Arial', sans-serif; /* Tipo de fonte consistente com o resto */
+    margin-bottom: 2%;
 }
 
 header img {
-    position: absolute; 
-    left: 1.25em; 
-    top: 60%; 
-    transform: translateY(-50%); 
-    width: 15em;
-    height: auto; 
+    width: 10em; /* Tamanho da imagem */
+    height: auto;
+    margin-right: 1em; /* Espaçamento entre a imagem e o texto em telas maiores */
 }
 
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empilha a imagem e o texto verticalmente em telas menores */
+        align-items: center; /* Centraliza tudo em telas pequenas */
+    }
+
+    header img {
+        width: 8em; /* Ajusta o tamanho da imagem para telas menores */
+        margin-bottom: 0.2em; /* Reduz o espaço entre a imagem e o texto */
+    }
+
+    header h1, header p {
+        margin-top: 0; /* Remove margem superior do texto */
+        margin-bottom: 0.5em; /* Pequena margem inferior para espaçamento adequado */
+        font-size: 1.2em; /* Tamanho da fonte ajustado para corresponder ao resto */
+    }
+}
+
+/* Estilos para navegação */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -28,20 +54,24 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-family: 'Arial', sans-serif; /* Tipo de fonte consistente com o resto */
 }
+
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px; /* Ajuste a altura conforme necessário */
     gap: 10px;
     padding: 20px;
 }
 
 .gallery-container img {
     width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    height: 100%;
+    object-fit: cover;
 }
+
+
 
 .gallery-container img:hover {
     transform: scale(1.05);
@@ -69,8 +99,8 @@ nav ul li a {
 }
 
 @keyframes zoom {
-    from {transform: scale(0);}
-    to {transform: scale(1);}
+    from { transform: scale(0); }
+    to { transform: scale(1); }
 }
 
 .close {
@@ -78,7 +108,7 @@ nav ul li a {
     top: 20px;
     right: 35px;
     color: #fff;
-    font-size: 40px;
+    font-size: 2.5em; 
     font-weight: bold;
     transition: 0.3s;
 }
@@ -93,7 +123,7 @@ nav ul li a {
 /* Mensagem centralizada */
 .centered-message {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2em; /* Tamanho da fonte ajustado para corresponder ao resto */
     color: #333;
     display: none;
 }
@@ -104,32 +134,35 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 .filter-input {
-    padding: 10px;
+    padding: 0.62em;
     border: 2px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1em; /* Ajustado para manter a consistência com o tamanho de fonte geral */
 }
 
 .modern-btn {
-    padding: 10px 20px;
+    padding: 0.62em 1.25em;
     background-color: #831717;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1em; /* Ajustado para manter a consistência com o tamanho de fonte geral */
     transition: background-color 0.3s ease;
 }
 
 .modern-btn:hover {
-    background-color: #831717;
+    background-color: #a12c2c;
 }
+
+/* Estilo para o rodapé */
 footer {
     margin-top: 5%;
+   
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -137,5 +170,5 @@ footer {
     width: 100%;
     bottom: 0;
     position: relative;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif; /* Mantido para o rodapé, consistente com o estilo geral */
 }

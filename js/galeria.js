@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: 'img/ft5.jpg', date: '2024-08-30' },
         { src: 'img/f6.jpg', date: '2024-08-25' },
         { src: 'img/f7.jpg', date: '2024-08-25' }
-        
     ];
+
     const gallery = document.getElementById('gallery');
     const filterDateInput = document.getElementById('filter-date');
     const filterBtn = document.getElementById('filter-btn');
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const imgElement = document.createElement('img');
                 imgElement.src = imgData.src;
                 imgElement.alt = "Gallery Image";
+                imgElement.classList.add('gallery-image'); // Adicionando classe para estilização
                 imgElement.addEventListener('click', function() {
                     modalImg.src = imgData.src;
                     imageModal.style.display = 'block';
